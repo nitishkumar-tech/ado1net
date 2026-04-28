@@ -108,9 +108,9 @@ namespace ado1net
         {
             con.Open();
             GridViewRow grd = grdData.Rows[e.RowIndex];
-            int UID = Convert.ToInt32(grdData.DataKeys[e.RowIndex].Value);
+            int userid = Convert.ToInt32(grdData.DataKeys[e.RowIndex].Value);
             SqlCommand cmd = new SqlCommand("Delete from login1 where userid=@userid", con);
-            cmd.Parameters.AddWithValue("@userid", UID);
+            cmd.Parameters.AddWithValue("@userid", userid);
             cmd.ExecuteNonQuery();
             con.Close();
             BindGridData();
